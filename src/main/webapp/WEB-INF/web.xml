@@ -3,7 +3,7 @@
 	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
 	version="3.1">
-	<display-name>spring5_webmvc_mybatis_study</display-name>
+	<display-name>spring5_rest_study</display-name>
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>
 		<welcome-file>index.htm</welcome-file>
@@ -25,8 +25,8 @@
 		<init-param>
 			<param-name>contextConfigLocation</param-name>
 			<param-value>
-            spring5_webmvc_mybatis_study.config.MvcConfig <!-- bean만 scanner만 -->
-            spring5_webmvc_mybatis_study.config.ContextRoot <!-- 분할한것 . -->
+       
+            spring5_rest_study.config.ContextRoot <!-- 분할한것 . -->
         
         </param-value>
 		</init-param>

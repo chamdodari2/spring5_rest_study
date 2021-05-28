@@ -2,10 +2,14 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="spring5_rest_study.mapper.MemberMapper">
 
+
+
 	<resultMap type="Member" id="resMember">
 		<id column="id" property="id"/>
 		<result column="regdate" property="registerDateTime"/>
 	</resultMap>
+	
+	
 	
 	<select id="selectAll" resultMap="resMember">
 		SELECT id, email, password, name, regdate
@@ -22,15 +26,15 @@
 		insert 
 		  into member (email, password, name, regdate) 
 		values (#{email}, #{password}, #{name}, now())
-		<selectKey keyProperty="id" resultType="Long">
+		 <selectKey keyProperty="id" resultType="Long">
 		select last_insert_id()
-		</selectKey>
+		</selectKey> 
 	</insert>
 	
 	<update id="update">
 		update member 
-		   set name=#{name}, password=#{password} 
-		 where email=#{email}
+		   set  email=#{email}, password=#{password} ,name=#{name}
+		 where id=#{id}
 	</update>
 	
 	<delete id="delete">
@@ -38,6 +42,8 @@
 		  from member 
 		 where email=#{email}
 	</delete>
+
+	
 	
 	
 	

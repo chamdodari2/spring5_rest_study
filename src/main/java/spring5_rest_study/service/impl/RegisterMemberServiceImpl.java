@@ -10,15 +10,15 @@ import spring5_rest_study.mapper.MemberMapper;
 import spring5_rest_study.service.RegisterMemberService;
 
 @Service
-public class RegisterMemberServiceImpl  implements RegisterMemberService{
-	
+public class RegisterMemberServiceImpl implements RegisterMemberService {
+
 	static final Log log = LogFactory.getLog(MemberListServiceImpl.class);
 	@Autowired
 	private MemberMapper mapper;
 
 	@Override
 	public int registerMember(Member member) {
-	
+		log.debug("service - registerMember() > " + member);
 		return mapper.insert(member);
 	}
 
