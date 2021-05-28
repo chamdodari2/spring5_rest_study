@@ -1,4 +1,5 @@
 package spring5_rest_study.mapper;
+
 import java.util.List;
 
 import org.apache.ibatis.logging.Log;
@@ -41,42 +42,42 @@ public class MemberMapperTest {
 		
 		list.forEach(s->log.debug(s.toString()));
 	}
-
-	@Test
-	public void test2InsertMember() {
-		log.debug(Thread.currentThread().getStackTrace()[1].getMethodName() + "()");
-		Member newMember = new Member("test20@test.co.kr", "1111", "test20");
-		
-		int res = mapper.insert(newMember);
-		Assert.assertEquals(1, res);
-	}
-
-	@Test
-	public void test3SelectMemberById() {
-		log.debug(Thread.currentThread().getStackTrace()[1].getMethodName() + "()");
-		
-		Member member = mapper.selectMemberById(2);
-		Assert.assertNotNull(member);
-		
-		log.debug(member.toString());
-	}
-	
-	@Test
-	public void test4UpdateMember() {
-		log.debug(Thread.currentThread().getStackTrace()[1].getMethodName() + "()");
-
-		Member newMember = new Member("test20@test.co.kr", "2222", "테스트20");
-		
-		int res = mapper.updateMember(newMember);
-		Assert.assertEquals(1, res);
-	}
-
-	@Test
-	public void test5DeleteMember() {
-		log.debug(Thread.currentThread().getStackTrace()[1].getMethodName() + "()");
-		
-		Member newMember = new Member("test20@test.co.kr", "2222", "테스트20");
-		int res = mapper.deleteMember(newMember);
-		Assert.assertEquals(1, res);
-	}
+//
+//	@Test
+//	public void test2InsertMember() {
+//		log.debug(Thread.currentThread().getStackTrace()[1].getMethodName() + "()");
+//		Member newMember = new Member("test20@test.co.kr", "1111", "test20");
+//		
+//		int res = mapper.insertMember(newMember);
+//		Assert.assertEquals(1, res);
+//	}
+//
+//	@Test
+//	public void test3SelectMemberById() {
+//		log.debug(Thread.currentThread().getStackTrace()[1].getMethodName() + "()");
+//		
+//		Member member = mapper.selectMemberById(2);
+//		Assert.assertNotNull(member);
+//		
+//		log.debug(member.toString());
+//	}
+//	
+//	@Test
+//	public void test4UpdateMember() {
+//		log.debug(Thread.currentThread().getStackTrace()[1].getMethodName() + "()");
+//
+//		Member newMember = new Member("test20@test.co.kr", "2222", "테스트20");
+//		
+//		int res = mapper.updateMember(newMember);
+//		Assert.assertEquals(1, res);
+//	}
+//
+//	@Test
+//	public void test5DeleteMember() {
+//		log.debug(Thread.currentThread().getStackTrace()[1].getMethodName() + "()");
+//		
+//		Member newMember = new Member("test20@test.co.kr", "2222", "테스트20");
+//		int res = mapper.deleteMember(newMember);
+//		Assert.assertEquals(1, res);
+//	}
 }

@@ -10,12 +10,12 @@ import spring5_rest_study.dto.Member;
 public interface MemberMapper {
 	
 
-	Member selectMemberById(Long memId);
+	Member selectMemberById(Long id);
 	List<Member> selectAll();	//멤버 전체 검색 (번호,멤버이름)?
 
 	int insert(Member member);
 	int update(Member member);
-	int delete(Member member);
+	int delete(long id);
 	
 //	public List<Member> selectMemberByRegdate(ListCommand listCommand);
 	
