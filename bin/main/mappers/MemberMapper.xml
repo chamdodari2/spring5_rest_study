@@ -40,7 +40,7 @@
 	<delete id="delete">
 		delete 
 		  from member 
-		 where email=#{email}
+		 where id=#{id}
 	</delete>
 
 	
