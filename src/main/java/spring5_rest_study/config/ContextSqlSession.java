@@ -5,13 +5,14 @@ import javax.sql.DataSource;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.SqlSessionTemplate;
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-//@MapperScan("spring5_rest_study.config.mapper")  //매퍼  //
+@MapperScan("spring5_rest_study.mapper")  //매퍼  //
 public class ContextSqlSession { 
 	@Autowired
 	ApplicationContext applicationContext;
@@ -21,7 +22,7 @@ public class ContextSqlSession {
 		SqlSessionFactoryBean factoryBean = new SqlSessionFactoryBean();
 		factoryBean.setDataSource(dataSource);
 		factoryBean.setConfigLocation(applicationContext.getResource("classpath:/mybatis-config.xml"));
-	//	factoryBean.setMapperLocations(applicationContext.getResources("classpath:/mappers/*Mapper.xml"));// 모든것에 mapper로 끝나는
+		factoryBean.setMapperLocations(applicationContext.getResources("classpath:/mappers/*Mapper.xml"));// 모든것에 mapper로 끝나는
 		return factoryBean;
 	}
 
