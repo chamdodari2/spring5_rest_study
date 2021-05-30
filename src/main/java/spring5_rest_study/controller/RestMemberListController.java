@@ -1,5 +1,7 @@
 package spring5_rest_study.controller;
 
+import org.apache.ibatis.logging.Log;
+import org.apache.ibatis.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,6 +13,8 @@ import spring5_rest_study.service.MemberListService;
 @RestController
 @RequestMapping("/api")
 public class RestMemberListController {
+	static final Log log = LogFactory.getLog(RestMemberListController.class);
+
 
 
 	@Autowired

@@ -39,8 +39,13 @@ public class MvcConfig implements WebMvcConfigurer {
 
 	@Override
 	public void addViewControllers(ViewControllerRegistry registry) {
-	registry.addViewController("/memberlist").setViewName("/member/list");
+	registry.addViewController("/memberlist").setViewName("/member/list");  /////여기 적어줘야 이동된다!!! 컨트롤러 따로 없어서!!
+	registry.addViewController("/read").setViewName("/member/get");
+	registry.addViewController("/update").setViewName("/member/update");
+	registry.addViewController("/registerMember").setViewName("/member/register");
 	}
+	
+	
 	@Bean
 	public MessageSource messageSource() { // 빈의 아이디를 반드시 “messageSource”로 지정해야 됨
 	ResourceBundleMessageSource ms = new ResourceBundleMessageSource();

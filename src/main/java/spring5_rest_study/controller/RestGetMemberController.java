@@ -2,6 +2,8 @@ package spring5_rest_study.controller;
 
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.ibatis.logging.Log;
+import org.apache.ibatis.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,6 +18,7 @@ import spring5_rest_study.service.GetMemberService;
 @RestController
 @RequestMapping("/api")
 public class RestGetMemberController {
+	static final Log log = LogFactory.getLog(RestGetMemberController.class);
 
 	@Autowired
 	private GetMemberService getMemberService;
@@ -32,4 +35,6 @@ public class RestGetMemberController {
 		}
 		return ResponseEntity.ok(member);
 	}
+	
+	
 }

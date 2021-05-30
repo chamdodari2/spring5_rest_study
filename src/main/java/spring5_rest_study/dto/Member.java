@@ -2,7 +2,6 @@ package spring5_rest_study.dto;
 
 import java.time.LocalDateTime;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import spring5_rest_study.exception.WrongIdPasswordException;
@@ -10,10 +9,10 @@ import spring5_rest_study.exception.WrongIdPasswordException;
 public class Member {
 	private Long id;
 	private String email;
-	@JsonIgnore
+//	@JsonIgnore
 	private String password;
 	private String name;
-	@JsonFormat(pattern = "yyyyMMddHHmmss")
+//	@JsonFormat(pattern = "yyyyMMddHHmmss")
 	private LocalDateTime registerDateTime;
 
 	public Member() {
@@ -24,6 +23,15 @@ public class Member {
 		this.email = email;
 		this.password = password;
 		this.name = name;
+	}
+
+	public Member(Long id, String email, String password, String name, LocalDateTime registerDateTime) {
+		super();
+		this.id = id;
+		this.email = email;
+		this.password = password;
+		this.name = name;
+		this.registerDateTime = registerDateTime;
 	}
 
 	public Member(String email, String password, String name, LocalDateTime registerDateTime) {
